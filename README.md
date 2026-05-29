@@ -1,6 +1,3 @@
-<p align="center">
-  <img src="assets/repo_banner.svg" alt="ADX ESG Disclosure Event Study Replication Vault" width="100%">
-</p>
 
 <h1 align="center">Mandate-Backed ESG Reporting and Limited Price Discovery</h1>
 <h3 align="center">Evidence from Sustainability Report Releases on the Abu Dhabi Securities Exchange</h3>
@@ -188,7 +185,6 @@ The term **Company** follows the investor-type category in the ADX trading data.
 
 The repository includes scripts, metadata, event calendars, derived outputs, and documentation needed to reproduce the reported analysis. Raw market microstructure data and investor-type trading records may be subject to provider or exchange access restrictions. Where raw data cannot be redistributed, the repository includes templates, derived files, and documentation sufficient for researchers with comparable access to reproduce the workflow.
 
-See [`DATA_AVAILABILITY.md`](DATA_AVAILABILITY.md) for details.
 
 ---
 
