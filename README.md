@@ -1,91 +1,90 @@
-#!/usr/bin/env python3
-"""Create a short GitHub README for the ADX ESG event-study replication package."""
-from __future__ import annotations
+<p align="center">
+  <img src="assets/repo_banner.svg" alt="ADX ESG Disclosure Event Study Replication Vault" width="100%">
+</p>
 
-import argparse
-from pathlib import Path
-from textwrap import dedent
+<h1 align="center">Mandate-Backed ESG Reporting and Limited Price Discovery</h1>
+<h3 align="center">Evidence from Sustainability Report Releases on the Abu Dhabi Securities Exchange</h3>
 
-README = r"""
-# Mandate-Backed ESG Reporting and Limited Price Discovery
+<p align="center">
+  <a href="https://doi.org/10.5281/zenodo.20371869"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.20371869.svg" alt="DOI"></a>
+  <a href="https://orcid.org/0000-0002-1670-8033"><img src="https://img.shields.io/badge/ORCID-0000--0002--1670--8033-A6CE39?logo=orcid&logoColor=white" alt="ORCID"></a>
+  <img src="https://img.shields.io/badge/Python-3.10%2B-blue" alt="Python 3.10+">
+  <img src="https://img.shields.io/badge/Status-Replication%20Package-success" alt="Replication package">
+  <img src="https://img.shields.io/badge/License-MIT%20%2F%20CC--BY--4.0-lightgrey" alt="License">
+</p>
 
-## Evidence from Sustainability Report Releases on the Abu Dhabi Securities Exchange
+## Citation
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20371869.svg)](https://doi.org/10.5281/zenodo.20371869)
-[![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
-[![ORCID](https://img.shields.io/badge/ORCID-0000--0002--1670--8033-green.svg)](https://orcid.org/0000-0002-1670-8033)
-[![Replication](https://img.shields.io/badge/Replication-Package%20Available-brightgreen.svg)](https://doi.org/10.5281/zenodo.20371869)
+**Drakopoulou, V.** (2026). *Mandate-backed ESG reporting and limited price discovery: Evidence from sustainability report releases on the Abu Dhabi Securities Exchange* [Replication package]. Zenodo. https://doi.org/10.5281/zenodo.20371869
 
-A reproducible event-study package examining whether ESG report publication on the Abu Dhabi Securities Exchange creates price discovery, trading attention, investor-type rebalancing, or credibility-based market response.
+**Author:** Veliota Drakopoulou  
+**Affiliations:** Higher Colleges of Technology, United Arab Emirates; Embry-Riddle Aeronautical University, United States  
+**ORCID:** [0000-0002-1670-8033](https://orcid.org/0000-0002-1670-8033)  
+**Email:** [vdrakopoulou@gmail.com](mailto:vdrakopoulou@gmail.com)  
+**GitHub:** <https://github.com/vdrakopoulou/ADX-ESG-Reporting-Event-Study-Replication-Package/tree/main>  
+**Zenodo DOI:** <https://doi.org/10.5281/zenodo.20371869>
 
 ---
 
-## Project at a Glance
+## Project overview
 
-| Field | Details |
+This repository reproduces the empirical analysis for the paper:
+
+> **Mandate-Backed ESG Reporting and Limited Price Discovery: Evidence from Sustainability Report Releases on the Abu Dhabi Securities Exchange**
+
+The study asks whether ESG and sustainability report releases generate market reactions on the Abu Dhabi Securities Exchange (ADX). It uses an event-study design to test abnormal returns, abnormal trading activity, and investor-type order imbalance around ESG report publication dates.
+
+The central finding is intentionally conservative:
+
+> ESG report publication on ADX does not generate significant immediate abnormal returns or abnormal trading volume. Investor-type trading shows wider-window rebalancing, especially when ESG report content is more credible, but these flow results are interpreted as gradual rebalancing rather than clean announcement-day causality.
+
+---
+
+## At a glance
+
+| Component | Description |
 |---|---|
-| Paper title | *Mandate-Backed ESG Reporting and Limited Price Discovery: Evidence from Sustainability Report Releases on the Abu Dhabi Securities Exchange* |
-| Target journal | *International Journal of Islamic and Middle Eastern Finance and Management* |
-| Article classification | Research Paper |
-| Author | Veliota Drakopoulou |
-| Affiliations | Higher Colleges of Technology, United Arab Emirates; Embry-Riddle Aeronautical University, United States |
-| ORCID | [0000-0002-1670-8033](https://orcid.org/0000-0002-1670-8033) |
-| Correspondence | [vdrakopoulou@gmail.com](mailto:vdrakopoulou@gmail.com) |
-| GitHub repository | https://github.com/vdrakopoulou/ADX-ESG-Reporting-Event-Study-Replication-Package |
-| Zenodo DOI | https://doi.org/10.5281/zenodo.20371869 |
-| Data and code availability | Replication materials are available through this GitHub repository and Zenodo DOI. |
-
-> **Note:** The journal name identifies the target outlet and should not be read as an acceptance or publication claim.
+| Broad ESG report universe | Approximately 101 ADX-listed firms, representing nearly the full actively traded ADX equity universe used in the project |
+| Final event-study sample | 67 aligned ESG report-release events |
+| Event-panel observations | 1,388 firm-event-trading-day observations |
+| Content-credibility subsample | 51 matched report-release events |
+| Main outcomes | CARs, abnormal log value traded, Company/Corporate OI, Individual OI |
+| Main conclusion | Limited price discovery; suggestive wider-window investor-type rebalancing |
+| Repository purpose | Reproducibility, auditability, and transparent empirical workflow |
 
 ---
 
-## Core Contribution
+## Research design
 
-This project separates **ESG disclosure publication** from **ESG disclosure usefulness**.
+```mermaid
+flowchart LR
+    A[ESG report calendar] --> B[Event-date alignment]
+    B --> C[Trading-day event panel]
+    C --> D[Abnormal returns and CARs]
+    C --> E[Abnormal trading activity]
+    C --> F[Investor-type order imbalance]
+    G[ESG report text metrics] --> H[Content-credibility score]
+    H --> I[High vs. low credibility tests]
+    D --> J[Tables and figures]
+    E --> J
+    F --> J
+    I --> J
+```
 
-The empirical question is narrow: when an ADX-listed firm releases an ESG, sustainability, integrated, or ESG-related annual report, does the market respond around the publication date?
-
-The main result is cautious:
-
-> ESG report releases do not generate statistically significant abnormal returns or abnormal trading activity. However, investor-type order imbalance shows wider-window rebalancing, and the response appears stronger when reports contain credible, specific, and verifiable ESG content.
-
----
-
-## Sample Summary
-
-| Item | Value |
-|---|---:|
-| ESG report universe | Approximately 101 ADX-listed firms |
-| Clean ESG report events | 103 |
-| Final aligned ESG report-release events | 67 |
-| Firm-event-day observations | 1,388 |
-| Unique tickers in aligned sample | 66 |
-| Matched content-credibility events | 51 |
-| Period | 2021-2025 |
+Event day 0 is defined as the first trading day on or after the ESG report announcement date. The main windows are `[-1,+1]`, `[-3,+3]`, `[-5,+5]`, and `[-10,+10]`.
 
 ---
 
-## Main Results
-
-| Test | Finding |
-|---|---|
-| Market-adjusted CARs | Not statistically significant |
-| Abnormal log value traded | Not statistically significant |
-| Company order imbalance | Net selling over wider windows |
-| Individual order imbalance | Net buying over wider windows |
-| Content credibility | Stronger wider-window trading response for higher-credibility reports |
-
-**Interpretation:**  
-This is not a positive-CAR paper. The evidence supports limited immediate price discovery, with suggestive wider-window investor-type rebalancing.
-
----
-
-## Repository Structure
+## Repository structure
 
 ```text
-ADX_ESG_Disclosure_Event_Study_Replication_V2_1/
+ADX-ESG-Reporting-Event-Study-Replication-Package/
 |
 |-- README.md
+|-- CITATION.cff
+|-- .zenodo.json
+|-- LICENSE
+|-- DATA_AVAILABILITY.md
 |-- CHANGELOG.md
 |-- requirements.txt
 |-- RUN_REPLICATION.py
@@ -98,7 +97,7 @@ ADX_ESG_Disclosure_Event_Study_Replication_V2_1/
 |-- data/
 |   |-- event_calendar/
 |   |-- raw/
-|   |-- text_source/
+|   |-- templates/
 |
 |-- outputs/
 |   |-- main_event_study/
@@ -108,119 +107,125 @@ ADX_ESG_Disclosure_Event_Study_Replication_V2_1/
 |-- manuscript/
 |-- documentation/
 |-- logs/
+|-- assets/
 ```
+
+The repository is designed so that the main event-study results and content-credibility heterogeneity results can be reproduced separately.
 
 ---
 
-## Quick Start
+## Quick start
 
-Clone the repository:
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/vdrakopoulou/ADX-ESG-Reporting-Event-Study-Replication-Package.git
 cd ADX-ESG-Reporting-Event-Study-Replication-Package
 ```
 
-Create and activate a virtual environment:
+### 2. Create an environment
 
 ```bash
 python -m venv .venv
-source .venv/bin/activate
+source .venv/bin/activate     # macOS/Linux
+# .venv\Scripts\activate      # Windows
 ```
 
-Install dependencies:
+### 3. Install requirements
 
 ```bash
-python -m pip install --upgrade pip
-python -m pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
-Run the main event-study replication:
+### 4. Reproduce the main event-study results
 
 ```bash
 python RUN_REPLICATION.py
 ```
 
-Run the content-credibility heterogeneity extension:
+### 5. Reproduce the content-credibility heterogeneity tests
 
 ```bash
 python RUN_CONTENT_HETEROGENEITY.py
 ```
 
-Reproduced outputs are written to:
+Reproduced files are written to:
 
 ```text
-outputs_reproduced/
+outputs_reproduced/main_event_study/
+outputs_reproduced/content_credibility/
 ```
 
 ---
 
-## Key Output Files
+## Main outputs
 
-| File | Purpose |
+| Output | File |
 |---|---|
-| `outputs/main_event_study/tables/sample_construction.csv` | Sample construction |
-| `outputs/main_event_study/tables/event_window_tests_all_robustness.csv` | Main CAR, volume, and order-imbalance results |
-| `outputs/main_event_study/tables/placebo_empirical_pvalues.csv` | Random-date placebo tests |
-| `outputs/main_event_study/tables/event_time_regressions.csv` | Event-time regression evidence |
-| `outputs/content_credibility/tables/table_content_credibility_high_low.csv` | Content-credibility heterogeneity tests |
-| `selected_figures/` | Manuscript-ready figures |
+| Sample construction | `outputs/main_event_study/tables/sample_construction.csv` |
+| Event-window tests | `outputs/main_event_study/tables/event_window_tests_all_robustness.csv` |
+| Placebo tests | `outputs/main_event_study/tables/placebo_empirical_pvalues.csv` |
+| Event-time regressions | `outputs/main_event_study/tables/event_time_regressions.csv` |
+| Content-credibility tests | `outputs/content_credibility/tables/table_content_credibility_high_low.csv` |
+| Abnormal-return figure | `outputs/main_event_study/figures/figure_abret_mktadj.png` |
+| Investor-flow figures | `outputs/main_event_study/figures/figure_ab_oi_company.png`, `figure_ab_oi_individual.png` |
 
 ---
 
-## Interpretation Guardrails
+## Main empirical interpretation
 
-The strongest defensible interpretation is:
+The replication package supports three core findings:
 
-> ESG report publication alone does not generate immediate price discovery on ADX. Wider-window investor-type order imbalance suggests gradual investor rebalancing, and this response appears stronger when ESG reports contain more credible content.
+1. **Limited price discovery.** ESG report releases do not generate significant short-window abnormal returns.
+2. **Limited abnormal trading volume.** Report publication does not generate broad abnormal trading activity.
+3. **Suggestive investor-type rebalancing.** Individual accounts become net buyers and Company/Corporate accounts become net sellers over wider windows, especially for more credible ESG reports. This is interpreted as gradual rebalancing rather than clean announcement-day causality.
 
-Wider-window flow results should not be interpreted as clean announcement-day causality.
-
----
-
-## Data Availability
-
-Replication materials are available through this GitHub repository and Zenodo:
-
-https://doi.org/10.5281/zenodo.20371869
-
-Some daily trading and investor-type data may be subject to exchange, institutional, or data-provider access conditions.
+The term **Company** follows the investor-type category in the ADX trading data. In the manuscript, it is interpreted as corporate or legal-entity accounts, not necessarily institutional investors, issuer-related accounts, insider trading, or market-maker activity unless separately identified.
 
 ---
 
-## Citation
+## Data availability and restrictions
 
-Drakopoulou, V. (2026). *Replication package for "Mandate-Backed ESG Reporting and Limited Price Discovery: Evidence from Sustainability Report Releases on the Abu Dhabi Securities Exchange"*. Zenodo. https://doi.org/10.5281/zenodo.20371869
+The repository includes scripts, metadata, event calendars, derived outputs, and documentation needed to reproduce the reported analysis. Raw market microstructure data and investor-type trading records may be subject to provider or exchange access restrictions. Where raw data cannot be redistributed, the repository includes templates, derived files, and documentation sufficient for researchers with comparable access to reproduce the workflow.
+
+See [`DATA_AVAILABILITY.md`](DATA_AVAILABILITY.md) for details.
 
 ---
 
-## Contact
+## Limitations
 
-**Veliota Drakopoulou**  
-Higher Colleges of Technology, United Arab Emirates  
-Embry-Riddle Aeronautical University, United States  
-ORCID: [0000-0002-1670-8033](https://orcid.org/0000-0002-1670-8033)  
-Email: [vdrakopoulou@gmail.com](mailto:vdrakopoulou@gmail.com)
-"""
+The results should be interpreted with two important limitations:
+
+- **Small-sample statistical power.** The final event-study sample contains 67 aligned events, so small market reactions may remain difficult to detect.
+- **Possible confounding news in wider windows.** Wider-window order-imbalance effects may be affected by overlapping firm-specific news, liquidity cycles, or broader trading conditions. Placebo tests, shifted windows, liquidity checks, and confounder flags reduce this concern but do not eliminate it.
+
+---
+
+## Keywords
+
+ESG disclosure; sustainability reporting; event study; abnormal returns; investor order imbalance; disclosure credibility; Abu Dhabi Securities Exchange; ADX; UAE; emerging markets; signaling theory; market reaction
+
+---
+
+## How to cite this repository
+
+Please cite both the paper and the replication package:
+
+```bibtex
+@misc{drakopoulou2026adx_esg_replication,
+  author       = {Drakopoulou, Veliota},
+  title        = {Mandate-Backed ESG Reporting and Limited Price Discovery: Evidence from Sustainability Report Releases on the Abu Dhabi Securities Exchange},
+  year         = {2026},
+  publisher    = {Zenodo},
+  doi          = {10.5281/zenodo.20371869},
+  url          = {https://doi.org/10.5281/zenodo.20371869}
+}
+```
+
+---
+
+## License
+
+Code is released under the MIT License. Documentation and manuscript-related text are released under CC BY 4.0 unless otherwise stated. Data files derived from ADX or third-party sources may be subject to their original data-provider restrictions.
 
 
-def main() -> None:
-    parser = argparse.ArgumentParser(description="Create a short GitHub README.md file.")
-    parser.add_argument("--outdir", default=".", help="Directory where README.md will be written.")
-    parser.add_argument("--filename", default="README.md", help="Output file name.")
-    parser.add_argument("--overwrite", action="store_true", help="Overwrite existing README.md if present.")
-    args = parser.parse_args()
-
-    outdir = Path(args.outdir).expanduser().resolve()
-    outdir.mkdir(parents=True, exist_ok=True)
-    output_path = outdir / args.filename
-
-    if output_path.exists() and not args.overwrite:
-        raise FileExistsError(f"{output_path} already exists. Use --overwrite to replace it.")
-
-    output_path.write_text(dedent(README).strip() + "\n", encoding="utf-8")
-    print(f"Created {output_path}")
-
-
-if __name__ == "__main__":
-    main()
